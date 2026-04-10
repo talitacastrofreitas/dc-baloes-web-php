@@ -1,0 +1,48 @@
+
+.carousel-indicators [data-bs-target] {
+     background-color: #e64a85; /* Cor rosa do seu tema */
+
+}
+
+/* Posiciona os controles do carrossel fora da imagem no index */
+.product-card .carousel-control-prev,
+.product-card .carousel-control-next {
+    width: 30px; /* Largura menor para caber nas laterais */
+    background-color: rgba(230, 74, 133, 0.1); /* Fundo rosa bem suave para destacar */
+    border-radius: 50%; /* Formato circular */
+    height: 30px;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino da centralização */
+    opacity: 0.8; /* Ligeiramente transparente por padrão */
+}
+
+.product-card .carousel-control-prev {
+    left: -15px; /* Move para fora à esquerda */
+}
+
+.product-card .carousel-control-next {
+    right: -15px; /* Move para fora à direita */
+}
+
+/* Muda a cor do ícone para o rosa da marca */
+.product-card .carousel-control-prev-icon,
+.product-card .carousel-control-next-icon {
+    background-image: none; /* Remove o ícone padrão branco do Bootstrap */
+    color: #e64a85; /* Cor rosa BalãoFest */
+    font-size: 1.2rem; /* Tamanho do ícone */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adiciona setas de texto simples ( < e > ) para garantir compatibilidade e cor */
+.product-card .carousel-control-prev-icon::after { content: '<'; }
+.product-card .carousel-control-next-icon::after { content: '>'; }
+
+/* Efeito de hover nos botões */
+.product-card .carousel-control-prev:hover,
+.product-card .carousel-control-next:hover {
+    background-color: rgba(230, 74, 133, 0.2); /* Fundo rosa ligeiramente mais forte */
+    opacity: 1;
+}
