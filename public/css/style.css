@@ -113,3 +113,34 @@ footer {
     width: 100%;
 }
 
+/* Garante que o container não quebre e permita scroll lateral suave */
+.custom-scroll-categories {
+    scrollbar-width: none; /* Firefox: Esconde barra de rolagem */
+    -ms-overflow-style: none; /* IE/Edge: Esconde barra de rolagem */
+}
+
+.custom-scroll-categories::-webkit-scrollbar {
+    display: none; /* Chrome/Safari: Esconde barra de rolagem para um look mais app */
+}
+
+/* Responsividade do texto dentro do botão */
+.custom-scroll-categories .btn {
+    font-size: 0.9rem; /* Tamanho padrão */
+    transition: all 0.2s;
+    flex-shrink: 0; /* Impede que o botão esmague no mobile */
+}
+
+@media (max-width: 576px) {
+    .custom-scroll-categories .btn {
+        font-size: 0.8rem; /* Diminui um pouco o texto em telas muito pequenas */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Estilo para o botão Ativo */
+.btn-outline-pink.active {
+    background-color: #f8bbd0 !important;
+    color: #ad1457 !important;
+    border-color: #f8bbd0 !important;
+}

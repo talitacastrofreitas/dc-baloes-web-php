@@ -223,7 +223,7 @@
             .total { font-size: 22px; font-weight: bold; color: #e64a85; text-align: right; margin-top: 30px; }
         </style></head>
         <body>
-           <div class="header"><h1>🎈 BalãoFest</h1></div>
+           <div class="header"><h1>DCBalões🎈</h1></div>
             <p><strong>Cliente:</strong> ${data.client_name} (${data.client_phone})<br>
             <strong>Serviço:</strong> ${data.service_type} - ${data.name}</p>
             <p><strong>Descrição:</strong> ${(data.description || 'N/A').replace(/\n/g, '<br>')}</p>

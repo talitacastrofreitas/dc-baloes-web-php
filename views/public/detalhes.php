@@ -1,7 +1,7 @@
 <?php include(__DIR__ . '/../partials/header.php');
 
 $whatsapp = !empty($settings['whatsapp_number']) ? $settings['whatsapp_number'] : '5571999999999'; 
-    $mensagem = urlencode("Olá! Vi o produto " . $produto['name'] . " no site e gostaria de um orçamento.");
+    $mensagem = urlencode("Olá! Vi o produto *" . $produto['name'] . "* no site e gostaria de um orçamento.");
 
      ?>
 

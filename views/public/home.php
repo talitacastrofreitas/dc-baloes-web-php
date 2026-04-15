@@ -6,20 +6,25 @@
         <p class="text-muted lead">Os balões mais encantadores para a sua celebração.</p>
     </div>
 
-    <div class="d-flex gap-2 mb-4 overflow-auto pb-2">
-        <a href="index.php" class="btn btn-outline-secondary text-decoration-none rounded-pill px-4">Todos</a>
-<?php foreach ($categorias as $cat): ?>
-    <?php 
-        // Garante que não passamos null para as funções
-        $nomeCategoria = $cat['service_name'] ?? ''; 
-    ?>
-    <a href="index.php?url=home&cat=<?= urlencode($nomeCategoria) ?>" 
-       class="btn btn-outline-pink rounded-pill px-4 <?= ($category === $nomeCategoria)  ?>" style="border-color: #f8bbd0; color: #ad1457;">
-   <?= htmlspecialchars($nomeCategoria) ?>
+<div class="d-flex flex-nowrap gap-2 mb-4 overflow-auto pb-3 custom-scroll-categories" style="-webkit-overflow-scrolling: touch;">
+    
+    <a href="index.php" class="btn btn-outline-secondary text-nowrap rounded-pill px-4 <?= empty($category) ? 'active' : '' ?>">
+        Todos
     </a>
-<?php endforeach; ?>
-    </div>
 
+    <?php foreach ($categorias as $cat): ?>
+        <?php 
+            $nomeCategoria = $cat['service_name'] ?? ''; 
+            $isActive = ($category === $nomeCategoria);
+        ?>
+        <a href="index.php?url=home&cat=<?= urlencode($nomeCategoria) ?>" 
+           class="btn btn-outline-pink text-nowrap rounded-pill px-4 <?= $isActive ? 'active' : '' ?>" 
+           style="border-color: #f8bbd0; color: #ad1457;">
+           <?= htmlspecialchars($nomeCategoria) ?>
+        </a>
+    <?php endforeach; ?>
+</div>
+    
     <div class="row g-4">
         <?php foreach ($produtos as $row): 
             $imgs = array_filter([$row['image_url'], $row['image_url2'] ?? null, $row['image_url3'] ?? null]);
