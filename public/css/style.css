@@ -1,0 +1,115 @@
+
+/* Garante que o HTML e o BODY ocupem toda a altura da tela */
+html, body {
+    height: 100%;
+}
+
+/* Configura o body para ser um container flexível vertical */
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* O conteúdo principal cresce para ocupar o espaço vazio, empurrando o footer */
+main, .container-principal {
+    flex: 1 0 auto;
+}
+
+/* Estilização do Footer */
+footer {
+    flex-shrink: 0; /* Impede o footer de "encolher" */
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+    padding: 2rem 0;
+    margin-top: auto; /* Garante que ele vá para o fim se o conteúdo for pouco */
+}
+
+
+.carousel-indicators [data-bs-target] {
+     background-color: #e64a85; /* Cor rosa do seu tema */
+
+}
+
+/* Posiciona os controles do carrossel fora da imagem no index */
+.product-card .carousel-control-prev,
+.product-card .carousel-control-next {
+    width: 30px; /* Largura menor para caber nas laterais */
+    background-color: rgba(230, 74, 133, 0.1); /* Fundo rosa bem suave para destacar */
+    border-radius: 50%; /* Formato circular */
+    height: 30px;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino da centralização */
+    opacity: 0.8; /* Ligeiramente transparente por padrão */
+}
+
+.product-card .carousel-control-prev {
+    left: -15px; /* Move para fora à esquerda */
+}
+
+.product-card .carousel-control-next {
+    right: -15px; /* Move para fora à direita */
+}
+
+/* Muda a cor do ícone para o rosa da marca */
+.product-card .carousel-control-prev-icon,
+.product-card .carousel-control-next-icon {
+    background-image: none; /* Remove o ícone padrão branco do Bootstrap */
+    color: #e64a85; /* Cor rosa BalãoFest */
+    font-size: 1.2rem; /* Tamanho do ícone */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adiciona setas de texto simples ( < e > ) para garantir compatibilidade e cor */
+.product-card .carousel-control-prev-icon::after { content: '<'; }
+.product-card .carousel-control-next-icon::after { content: '>'; }
+
+/* Efeito de hover nos botões */
+.product-card .carousel-control-prev:hover,
+.product-card .carousel-control-next:hover {
+    background-color: rgba(230, 74, 133, 0.2); /* Fundo rosa ligeiramente mais forte */
+    opacity: 1;
+}
+
+
+/* Ajuste para tabelas em telas pequenas */
+@media (max-width: 768px) {
+    .card .table-responsive {
+        border: 0;
+    }
+    
+    /* Faz os botões de ação ficarem maiores para toque no mobile */
+    .btn-sm {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Esconde colunas menos importantes no mobile para poupar espaço */
+    .d-mobile-none {
+        display: none !important;
+    }
+
+    footer {
+        padding: 1.5rem 0;
+        font-size: 0.85rem;
+    }
+
+    /* Ajusta os controles do carrossel para não sumirem em telas muito estreitas */
+    .product-card .carousel-control-prev { left: -5px; }
+    .product-card .carousel-control-next { right: -5px; }
+}
+
+/* Melhoria visual geral */
+.rounded-4 { border-radius: 1rem !important; }
+.bg-soft-primary { background-color: rgba(230, 74, 133, 0.1); }
+
+/* Garante que imagens de produtos não quebrem o layout */
+.product-image-container {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+}
+
